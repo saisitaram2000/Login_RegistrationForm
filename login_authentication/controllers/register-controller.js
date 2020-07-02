@@ -14,7 +14,7 @@ module.exports.register = function(req,res){
         "created_at":curr_time,
         "updated_at":curr_time
     }
-
+   
     connection.query('INSERT INTO users SET ?',users,function(error,results,fields){
         if(error){
             console.log(error);
@@ -24,11 +24,12 @@ module.exports.register = function(req,res){
             })
         }else{
            const markup=`
-            <h1>Hey ${req.body.name}, you have successfully registered</h1>
+            <h1>Hey ${users.name}, you have successfully registered</h1>
            `;
            res.send(markup);
         }
     });
    });
    
+  
 }
