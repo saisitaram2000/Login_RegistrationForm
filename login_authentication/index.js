@@ -17,8 +17,13 @@ app.get('/login.html',function(req,res){
     res.sendFile(__dirname+"/login.html");
 })
 
+app.post('/register',registerController.register);
+app.post('/authenticate',authenticateController.authenticate);
+console.log(authenticateController);
+
+ app.post('/controllers/register-controller', registerController.register);
+ app.post('/controllers/authenticate-controller',authenticateController.authenticate);
 
 
 
-
-app.listen(3000);
+app.listen(8012);
