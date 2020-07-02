@@ -19,11 +19,10 @@ module.exports.register = function(req,res){
                 message:'Error with query'
             })
         }else{
-            res.json({
-                status:true,
-                data:results,
-                message:'user registered successfully'
-            })
+           const markup=`
+            <h1>Hey ${req.body.name}, you have successfully registered</h1>
+           `;
+           res.send(markup);
         }
     });
 }

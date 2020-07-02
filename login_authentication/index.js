@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var connection = require('./config');
 var app = express();
 
+
 var authenticateController = require('./controllers/authenticate-controller');
 var registerController = require('./controllers/register-controller');
 
@@ -16,6 +17,7 @@ app.get('/',function(req,res){
 app.get('/login.html',function(req,res){
     res.sendFile(__dirname+"/login.html");
 })
+
 
 app.post('/register',registerController.register);
 app.post('/authenticate',authenticateController.authenticate);
